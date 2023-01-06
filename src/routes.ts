@@ -7,6 +7,6 @@ const userController = new UserController();
 router.post('/user', userController.createUser) //não precisa de parametro
 //pq retornará erro, já que utilizaremos os parâmetros padrão: request, response.
 
-router.get('/user', userController.getAllUsers)
+router.get('/user', userController.getUser)
 
 router.delete('/user', userController.deleteUser)
