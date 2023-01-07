@@ -21,6 +21,16 @@ export class UserService {
     getUser = () => {
     }
 
+    getAuthenticatedUser = async (email: string, password: string): Promise<User | null> => {
+        return this.userRepository.getUserByEmailAndPassword(email, password)
+    }
+
+    getToken = async (email: string, password: string) => {
+        const user = await this.getAuthenticatedUser(email, password)
+
+        return user?.id_user
+    }
+
     deleteUser = (name: string) => {
         
     }
